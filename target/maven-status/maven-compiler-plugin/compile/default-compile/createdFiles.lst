@@ -1,6 +1,4 @@
 com\blastfurnace\otr\rest\adapter\AudioDataAdapter.class
-com\blastfurnace\otr\servlet\PingServlet.class
-com\blastfurnace\otr\servlet\LogServlet.class
-com\blastfurnace\otr\AudioDataApplication.class
 com\blastfurnace\otr\rest\adapter\AudioDataAdapterImpl.class
 com\blastfurnace\otr\rest\AudioDataRestController.class
+com\blastfurnace\otr\AudioDataApplication.class
