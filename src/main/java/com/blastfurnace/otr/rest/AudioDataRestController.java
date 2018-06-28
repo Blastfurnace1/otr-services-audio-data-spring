@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.blastfurnace.otr.model.AudioFileProperties;
+import com.blastfurnace.otr.data.audiofile.model.AudioFileProperties;
 import com.blastfurnace.otr.rest.adapter.AudioDataAdapter;
 import com.blastfurnace.otr.rest.request.QueryData;
-import com.blastfurnace.otr.rest.response.GenericRestResponse;
+import com.blastfurnace.otr.service.payload.PayloadWithCount;
+import com.blastfurnace.otr.service.response.GenericResponse;
 
 @RestController
 @RequestMapping("/rest")
@@ -28,49 +29,50 @@ public class AudioDataRestController {
 
     @RequestMapping(value = "/get/{id:[\\d]+}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<GenericRestResponse<AudioFileProperties>>  get(@PathVariable long  id) {
-    	GenericRestResponse<AudioFileProperties> g = audioAdapter.get(id);
-    	ResponseEntity<GenericRestResponse<AudioFileProperties>> response = new ResponseEntity<GenericRestResponse<AudioFileProperties>>(g, HttpStatus.OK);
+    public ResponseEntity<GenericResponse<AudioFileProperties>>  get(@PathVariable long  id) {
+    	GenericResponse<AudioFileProperties> g = audioAdapter.get(id);
+    	ResponseEntity<GenericResponse<AudioFileProperties>> response = new ResponseEntity<GenericResponse<AudioFileProperties>>(g, HttpStatus.OK);
     	return response;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<GenericRestResponse<List<Map<String, Object>>>>> query(@RequestParam Map<String, String> queryParameters) {
+    public ResponseEntity<List<GenericResponse<PayloadWithCount<List<Map<String, Object>>>>>> query(@RequestParam Map<String, String> queryParameters) {
 
     	QueryData qry = new QueryData(queryParameters);
     	qry.setSort("title");
-    	GenericRestResponse<List<Map<String,Object>>> g = audioAdapter.query(qry);
-    	List<GenericRestResponse<List<Map<String, Object>>>> list = new ArrayList<GenericRestResponse<List<Map<String, Object>>>>();
+    	GenericResponse<PayloadWithCount<List<Map<String, Object>>>> g = audioAdapter.queryWithCount(qry);
+    	
+    	List<GenericResponse<PayloadWithCount<List<Map<String, Object>>>>> list = new ArrayList<GenericResponse<PayloadWithCount<List<Map<String, Object>>>>>();
     	list.add(g);
-    	ResponseEntity<List<GenericRestResponse<List<Map<String, Object>>>>> response = new ResponseEntity<List<GenericRestResponse<List<Map<String, Object>>>>>(list, HttpStatus.OK);
+    	ResponseEntity<List<GenericResponse<PayloadWithCount<List<Map<String, Object>>>>>> response = new ResponseEntity<List<GenericResponse<PayloadWithCount<List<Map<String, Object>>>>>>(list, HttpStatus.OK);
 
     	return response;
     }
      
     @RequestMapping(value = "/delete/{id:[\\d]+}", method = RequestMethod.DELETE)
     @ResponseBody
-    public ResponseEntity<GenericRestResponse<String>> delete(@PathVariable long  id) {
+    public ResponseEntity<GenericResponse<String>> delete(@PathVariable long  id) {
     	
-    	GenericRestResponse<String> g = audioAdapter.delete(id);
-    	ResponseEntity<GenericRestResponse<String>> response = new ResponseEntity<GenericRestResponse<String>>(g, HttpStatus.OK);
+    	GenericResponse<String> g = audioAdapter.delete(id);
+    	ResponseEntity<GenericResponse<String>> response = new ResponseEntity<GenericResponse<String>>(g, HttpStatus.OK);
 
     	return response;
     }
     
     @RequestMapping(value = "/resultsCount", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<GenericRestResponse<Long>> getResultsCount(@RequestParam Map<String, String> queryParameters) {
+    public ResponseEntity<GenericResponse<Long>> getResultsCount(@RequestParam Map<String, String> queryParameters) {
     	 QueryData qry = new QueryData(queryParameters);
-    	 GenericRestResponse<Long> g = audioAdapter.getResultsCount(qry);
-    	return new ResponseEntity<GenericRestResponse<Long>>(g, HttpStatus.OK);
+    	 GenericResponse<Long> g = audioAdapter.getResultsCount(qry);
+    	return new ResponseEntity<GenericResponse<Long>>(g, HttpStatus.OK);
     }
     
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<GenericRestResponse<AudioFileProperties>> save(AudioFileProperties audio) {
-    	GenericRestResponse<AudioFileProperties> g = audioAdapter.save(audio);
-    	ResponseEntity<GenericRestResponse<AudioFileProperties>> response = new ResponseEntity<GenericRestResponse<AudioFileProperties>>(g, HttpStatus.OK);
+    public ResponseEntity<GenericResponse<AudioFileProperties>> save(AudioFileProperties audio) {
+    	GenericResponse<AudioFileProperties> g = audioAdapter.save(audio);
+    	ResponseEntity<GenericResponse<AudioFileProperties>> response = new ResponseEntity<GenericResponse<AudioFileProperties>>(g, HttpStatus.OK);
     	return response;
     }
 

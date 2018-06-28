@@ -31,7 +31,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.blastfurnace.otr.model.AudioFileProperties;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.Assert.assertTrue;

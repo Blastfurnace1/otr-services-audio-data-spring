@@ -1,4 +1,4 @@
-package com.blastfurnace.otr.rest.adapter;
+package com.blastfurnace.otr.rest.service;
 
 import java.util.List;
 import java.util.Map;
@@ -8,11 +8,9 @@ import com.blastfurnace.otr.rest.request.QueryData;
 import com.blastfurnace.otr.service.payload.PayloadWithCount;
 import com.blastfurnace.otr.service.response.GenericResponse;
 
-public interface AudioDataAdapter {
+public interface AudioDataService {
 
-	GenericResponse<AudioFileProperties> get(Long id);
-
-	GenericResponse<List<Map<String, Object>>> query(QueryData qry);
+	GenericResponse<PayloadWithCount<List<Map<String, Object>>>> queryWithCount(QueryData qry);
 
 	GenericResponse<Long> getResultsCount(QueryData qry);
 
@@ -20,5 +18,9 @@ public interface AudioDataAdapter {
 
 	GenericResponse<AudioFileProperties> save(AudioFileProperties audio);
 
-	GenericResponse<PayloadWithCount<List<Map<String, Object>>>> queryWithCount(QueryData qry);
+	GenericResponse<AudioFileProperties> get(Long id);
+
+	GenericResponse<List<Map<String, Object>>> query(QueryData qry);
+
+	GenericResponse<AudioFileProperties> update(AudioFileProperties audio);	
 }
