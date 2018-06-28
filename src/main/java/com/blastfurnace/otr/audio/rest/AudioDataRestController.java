@@ -1,4 +1,4 @@
-package com.blastfurnace.otr.rest;
+package com.blastfurnace.otr.audio.rest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.blastfurnace.otr.audio.adapter.AudioDataAdapter;
 import com.blastfurnace.otr.data.audiofile.model.AudioFileProperties;
-import com.blastfurnace.otr.rest.adapter.AudioDataAdapter;
 import com.blastfurnace.otr.rest.request.QueryData;
 import com.blastfurnace.otr.service.payload.PayloadWithCount;
 import com.blastfurnace.otr.service.response.GenericResponse;

@@ -1,4 +1,4 @@
-package com.blastfurnace.otr.rest.adapter;
+package com.blastfurnace.otr.audio.adapter;
 
 import java.util.List;
 import java.util.Map;
