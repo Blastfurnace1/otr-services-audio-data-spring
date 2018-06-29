@@ -1,6 +1,6 @@
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\rest\AudioDataRestController.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\rest\service\impl\AudioDataServiceImpl.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\rest\adapter\AudioDataAdapter.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\rest\adapter\impl\AudioDataAdapterImpl.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\rest\service\AudioDataService.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\AudioDataApplication.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\Application.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\service\impl\AudioDataServiceImpl.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\rest\AudioDataRestController.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\service\AudioDataService.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\adapter\impl\AudioDataAdapterImpl.java
+C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\adapter\AudioDataAdapter.java

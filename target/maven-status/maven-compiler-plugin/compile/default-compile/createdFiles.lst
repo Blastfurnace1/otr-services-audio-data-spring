@@ -1,6 +1,6 @@
-com\blastfurnace\otr\rest\adapter\AudioDataAdapter.class
-com\blastfurnace\otr\rest\service\impl\AudioDataServiceImpl.class
-com\blastfurnace\otr\AudioDataApplication.class
-com\blastfurnace\otr\rest\adapter\impl\AudioDataAdapterImpl.class
-com\blastfurnace\otr\rest\service\AudioDataService.class
-com\blastfurnace\otr\rest\AudioDataRestController.class
+com\blastfurnace\otr\Application.class
+com\blastfurnace\otr\audio\service\impl\AudioDataServiceImpl.class
+com\blastfurnace\otr\audio\adapter\impl\AudioDataAdapterImpl.class
+com\blastfurnace\otr\audio\adapter\AudioDataAdapter.class
+com\blastfurnace\otr\audio\service\AudioDataService.class
+com\blastfurnace\otr\audio\rest\AudioDataRestController.class
