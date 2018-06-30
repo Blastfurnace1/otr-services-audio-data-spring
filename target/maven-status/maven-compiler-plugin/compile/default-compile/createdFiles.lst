@@ -2,5 +2,6 @@ com\blastfurnace\otr\Application.class
 com\blastfurnace\otr\audio\service\impl\AudioDataServiceImpl.class
 com\blastfurnace\otr\audio\adapter\impl\AudioDataAdapterImpl.class
 com\blastfurnace\otr\audio\adapter\AudioDataAdapter.class
+com\blastfurnace\otr\servlet\AudioPingServlet.class
 com\blastfurnace\otr\audio\service\AudioDataService.class
 com\blastfurnace\otr\audio\rest\AudioDataRestController.class
