@@ -1,7 +1,3 @@
 C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\Application.java
 C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\service\impl\AudioDataServiceImpl.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\servlet\AudioPingServlet.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\rest\AudioDataRestController.java
 C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\service\AudioDataService.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\adapter\impl\AudioDataAdapterImpl.java
-C:\workspace\otr-services-audio-data-spring\src\main\java\com\blastfurnace\otr\audio\adapter\AudioDataAdapter.java
