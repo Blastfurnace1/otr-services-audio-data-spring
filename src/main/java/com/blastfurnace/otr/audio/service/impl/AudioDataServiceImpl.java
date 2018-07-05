@@ -6,13 +6,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
 import com.blastfurnace.otr.audio.service.AudioDataService;
 import com.blastfurnace.otr.data.audiofile.AudioService;
 import com.blastfurnace.otr.data.audiofile.model.AudioFileProperties;
-import com.blastfurnace.otr.rest.request.QueryData;
 import com.blastfurnace.otr.service.GenericService;
 import com.blastfurnace.otr.service.payload.PayloadWithCount;
-import com.blastfurnace.otr.service.response.GenericResponse;
+import com.blastfurnace.otr.service.request.QueryData;
+import com.blastfurnace.otr.service.response.GenericServiceResponse;
 
 @Component("AudioDataService")
 public class AudioDataServiceImpl implements AudioDataService {
@@ -27,40 +28,40 @@ public class AudioDataServiceImpl implements AudioDataService {
 	}
 	
 	@Override
-	public GenericResponse<List<Map<String,Object>>> query(QueryData qry) {
+	public GenericServiceResponse<List<Map<String,Object>>> query(QueryData qry) {
 		return gService.query(qry, service);
 	}
 
 	@Override
-	public GenericResponse<PayloadWithCount<List<Map<String,Object>>>> queryWithCount(QueryData qry) {
+	public GenericServiceResponse<PayloadWithCount<List<Map<String,Object>>>> queryWithCount(QueryData qry) {
 		return gService.queryWithCount(qry, service);
 	}
 	
 	@Override
-	public GenericResponse<AudioFileProperties> get(Long id) {
+	public GenericServiceResponse<AudioFileProperties> get(Long id) {
 		return gService.get(id, service);
 	}
 
 	
 	@Override
-	public GenericResponse<Long> getResultsCount(QueryData qry) {
+	public GenericServiceResponse<Long> getResultsCount(QueryData qry) {
 		return gService.getResultsCount(qry, service);
 	}
 
 	@Override
-	public GenericResponse<String> delete(Long id) {
+	public GenericServiceResponse<String> delete(Long id) {
 		return gService.delete(id, service);
 	}
 
 	@Override
-	public GenericResponse<AudioFileProperties> save(AudioFileProperties audio) {
+	public GenericServiceResponse<AudioFileProperties> save(AudioFileProperties audio) {
 		return gService.save(audio, service);
 	}
 	
 	
 	@Override
-	public GenericResponse<AudioFileProperties> update(AudioFileProperties audio) {
-		GenericResponse<AudioFileProperties> response = new GenericResponse<AudioFileProperties>(null);
+	public GenericServiceResponse<AudioFileProperties> update(AudioFileProperties audio) {
+		GenericServiceResponse<AudioFileProperties> response = new GenericServiceResponse<AudioFileProperties>(null);
 		if (audio == null) {
 			response.setStatus(-50l);
 			response.setMessage("Unable to update Record - nothing to update");
