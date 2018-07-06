@@ -3,6 +3,8 @@ package com.blastfurnace.otr.audio;
 
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,12 +19,13 @@ import static org.junit.Assert.assertTrue;
  * Integration Tests for Audio Services
  *
  * @author Jim Blackson*/
-public class AudioServiceApplicationTests extends UtilitiesApplicationTest  {
+public class AudioServiceApplicationTests extends UtilitiesApplicationTest {
 
+	private static final Logger log = LoggerFactory.getLogger(AudioServiceApplicationTests.class); 
 	
 	@Test
-	public void WhenSendingGetRequestToControllerReponseObject() throws Exception {
-		
+	public void shouldPerformAudioServiceTests() throws Exception {
+		log.info("Audio Service Tests - Start");
 //		@SuppressWarnings("rawtypes")
 //		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
 //				"http://localhost:" + this.port + "/rest/get/3", Map.class);
@@ -41,6 +44,7 @@ public class AudioServiceApplicationTests extends UtilitiesApplicationTest  {
 //		then(entity).isNotNull();
 //		then(audio.getId()).isEqualTo(3);
 //		then(audio.getFilename()).isNotNull();
+		log.info("Audio Service Tests - End");
 	}
 	
 }
